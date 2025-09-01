@@ -12,7 +12,7 @@ class TitanicSurvivalML:
             .config("spark.sql.shuffle.partitions", "8") \
             .getOrCreate()
 
-        self.dataset_path = "data/titanic.csv"
+        self.dataset_path = "titanic.csv"
 
     def load_data(self):
         """Load Titanic dataset"""
@@ -91,3 +91,4 @@ if __name__ == "__main__":
 
     print(f"\nRandomForest Titanic AUC: {auc:.3f}")
     preds.select("features", "label", "prediction", "probability").show(10, truncate=False)
+
